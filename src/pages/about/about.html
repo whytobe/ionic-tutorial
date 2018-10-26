@@ -7,5 +7,24 @@
 </ion-header>
 
 <ion-content padding>
+  <div text-center="">
+    <ngx-qrcode
+            [qrc-element-type]="elementType"
+            [qrc-value]="qrcode"
+            qrc-class="aclass"
+            qrc-errorCorrectionLevel="L">
+    </ngx-qrcode>
+  </div>
+  <div text-center="">
+    <ion-textarea [(ngModel)]="qrcode"></ion-textarea>
+  </div>
 
+  <div text-center="">
+    <button ion-button [block]="true" (click)="scanRequest()">Scan</button>
+  </div>
+
+  <div text-center="">
+    <h3>Result</h3>
+    <pre>{{data}}</pre>
+  </div>
 </ion-content>
